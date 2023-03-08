@@ -7,17 +7,19 @@
     <title>tugas 1b.php</title>
 </head>
 <body>
-<?php $npm = "65";?>
-<?php echo 'Aku adalah <b>'. $npm . '</b><br>';
+
+
+<?php $angka = "65";?>
+<?php echo 'Aku adalah <b>'. $angka . '</b><br>';
 ?>
 
-<?php echo 'Jika aku dikali 5, maka aku sekarang menjadi <b>'. $npm*5 . '</b><br>'
+<?php echo 'Jika aku dikali 5, maka aku sekarang menjadi <b>'. ($angka *= 5) . '</b><br>'
  ?>
-<?php echo 'Jika aku dibagi 2, maka aku sekarang menjadi <b>'. $npm/2 . '</b><br>'
+<?php echo 'Jika aku dibagi 2, maka aku sekarang menjadi <b>'. ($angka /= 2) . '</b><br>'
  ?>
-<?php echo 'Jika aku ditambah 75, maka aku sekarang menjadi <b>'. $npm+75 . '</b><br>' 
+<?php echo 'Jika aku ditambah 75, maka aku sekarang menjadi <b>'. $angka+75 . '</b><br>' 
  ?>
-<?php echo 'Jika aku dikurang 20, maka aku sekarang menjadi <b>'. $npm-20 . '</b><br>'
+<?php echo 'Jika aku dikurang 20, maka aku sekarang menjadi <b>'. $angka-20 . '</b><br>'
 ?>
 </body>
 </html>
