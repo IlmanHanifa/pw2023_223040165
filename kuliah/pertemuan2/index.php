@@ -1,5 +1,5 @@
 <?php
-$nama = 'Ilman';
+$nama = 'ILman';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,5 +15,6 @@ $nama = 'Ilman';
 </h1>
         <p><?php echo '"PENGUMUMAN" : Sekarang hari Jum\'at'; ?></p>
     <p><?php echo 10 + 10;?></p>
+    <?= $; ?>
 </body>
 </html>
