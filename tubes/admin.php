@@ -1,63 +1,58 @@
+<?php
+require 'function.php';
+$user = query("SELECT * FROM datalogin");
+
+
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Halaman Admin Berita</title>
-    <style>
-        /* CSS untuk tampilan halaman */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        .news-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .news-form label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .news-form input[type="text"],
-        .news-form textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .news-form button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    <title>Halaman Admin</title>
 </head>
 
 <body>
-    <h1>Halaman Admin Berita</h1>
 
-    <div class="news-form">
-        <form>
-            <label for="title">Judul Berita:</label>
-            <input type="text" id="title" name="title" placeholder="Masukkan judul berita" required>
+    <h1>Daftar User</h1>
 
-            <label for="content">Konten Berita:</label>
-            <textarea id="content" name="content" rows="8" placeholder="Masukkan konten berita" required></textarea>
+    <a href="tambah.php">Tambah data user</a>
+    <br><br>
 
-            <button type="submit">Tambah Berita</button>
-        </form>
-    </div>
+    <form action="" method="post">
+
+        <input type="text" name="keyword" size="40" autofocus placeholder="masukkan keyword pencarian.." autocomplete="off">
+        <button type="submit" name="cari">Cari!</button>
+
+    </form>
+
+    <br>
+    <table border="1" cellpadding="10" cellspacing="0">
+
+        <tr>
+            <th>No</th>
+            <th>Aksi</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+
+        <?php $i = 1; ?>
+        <?php foreach ($user as $row) : ?>
+            <tr>
+                <td><?= $i; ?></td>
+                <td>
+                    <a href="ubah.php?id=<?= $row["id"]; ?>">ubah</a> |
+                    <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('yakin?');">hapus</a>
+                </td>
+                <td><?= $row["username"]; ?></td>
+                <td><?= $row["email"]; ?></td>
+                <td><?= $row["password"]; ?></td>
+            </tr>
+            <?php $i++; ?>
+        <?php endforeach; ?>
+
+    </table>
+
 </body>
 
 </html>

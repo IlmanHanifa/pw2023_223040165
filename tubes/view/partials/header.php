@@ -5,7 +5,7 @@
      <a href="/pw2023_223040165/tubes/index.php">Home</a>
      <a href="/pw2023_223040165/tubes/view/about.php">About</a>
      <a href="login.php">Login</a>
-     <a href="../../admin.php">Admin</a>
+     <a href="/pw2023_223040165/tubes/admin.php">Admin</a>
    </div>
 
    <div class="navbar-extra">
